@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap413/css/bootstrap.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
+        crossorigin="anonymous">
+
+    <title>Examen</title>
+
+    <script type="text/javascript" src="js/simplex.js"></script>
+    <script type="text/javascript" src="js/simplexprincipal.js"></script>
+</head>
+
+<body>
+
+    <!-- Encabezado -->
+    <div class="container-fluid  navbar-dark bg-minav fixed-top text-uppercase">
+        <nav class="navbar navbar-expand-lg container-fluid bg-minav">
+            <a class="navbar-brand" href="#">
+                <img src="imgs/navbar.png" alt=""> Métodos-cuantitativos</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <!-- Cambiar la l por r para cambiar el centrado de las secciones-->
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item active">
+                        <a class="nav-link mx-4" href="index.html">Inicio</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Métodos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="simplex.html">Simplex</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Otro</a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Método simplex card -->
+    <div class="container-fluid py-5">
+        <div class="container-fluid py-5">
+
+            <!-- VARIABLES Y RESTRICCIONES -->
+            <div class="row">
+                <!-- DATOS -->
+                <div class="col-md-3">
+                    <div class="card text-center">
+                        <div class="card-header bg-success">
+                            <b>Variables y restricciones</b>
+                        </div>
+                        <div class="card-body">
+                            <div class="container">
+                                <form id="form1" name="form1" method="post" action="">
+
+                                    <p><b>Objetivo</b>:<br>&nbsp;&nbsp;&nbsp; Máximizar&nbsp;
+                                        <input id="idoptmaximizar" type="radio" value="V1" checked name="objetivo">&nbsp;&nbsp;&nbsp;&nbsp;
+                                        Mínimizar:&nbsp;&nbsp;&nbsp; <input i="idoptminimizar" type="radio" name="objetivo"
+                                            value="V2"></p>
+
+                                    <div class="input-group">
+                                        <label for="inputState">Xn: </label>
+                                        <select id="idnovariables" class="form-control m-2" required="required">
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label for="inputState">Rn: </label>
+                                        <select id="idnorestricciones" class="form-control m-2" required="required">
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                        </select>
+                                    </div>
+
+                                    <input type="button" class="btn btn-primary btn-md btn-block" name="button" id="generateTable"
+                                        value="Generar Tabla" onclick="preparar()" />
+
+                                    <button type="button" class="btn btn-primary btn-md btn-block" id="calculate"
+                                        onclick="resolver()" >Resolver</button>
+
+                                    <div id="fo"></div>
+                                    <div id="matriz"></div>
+                                    <div id="ceros"></div>
+                                    <div id="tabla"></div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- DATOS-->
+
+                <!-- LLENADO DE TABLA -->
+                <div class="col-md-9">
+                    <div class="card text-center">
+
+                        <div class="card-header bg-success">
+                            <b>Ingrese los datos</b>
+                        </div>
+                        <div class="card-body" id="tabla_simplex">
+
+                            <div class="container" id="idgridproblema">
+                                <div class="alert alert-success" role="alert">
+                                    <h4 class="alert-heading">
+                                        <b>Tabla simplex</b>
+                                    </h4>
+                                    <p>Para llenar la tabla es necesario que eliga el numero de variables y
+                                        restricciones, sólo
+                                        tiene que seleccionar en el recuadro de la izquiedra cúantas variables y
+                                        cuántas
+                                        restricciones desea que tenga el sistema, presione el boton "Genera tabla" y
+                                        proceda
+                                        a llenarla
+                                    </p>
+                                    <hr>
+                                    <p class="mb-0">Presione el botón "Resolver" para obetner el resultado óptimo</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- FIN DE LLENADO DE TABLA -->
+
+            </div>
+            <!-- FIN VARIABLES Y RESTRICIONES -->
+
+
+
+            <!-- SOLUCIONES -->
+            <div class="row my-5">
+                <div class="container-fluid p-4">
+                    <div class="row">
+
+                        <!-- TABLA OPTIMA -->
+                        <div class="col-md-12" id="resultados">
+                            <div class="card text-center">
+                                <div class="card-header bg-success">
+                                    <b>Resultado final</b>
+                                </div>
+                                <div class="card-body">
+                                    <div class="container" id="jsolucion">
+                                        <div class="alert alert-success" role="alert">
+                                            <h4 class="alert-heading">
+                                                <b>Tabla Optima</b>
+                                            </h4>
+                                            <p>La tabla óptima contiene los resultados arrojados por la tabla simplex,
+                                            </p>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- TABLA OPTIMA -->
+                    </div>
+                </div>
+            </div>
+            <!-- FIN DE SOLUCIONES -->
+
+
+        </div>
+    </div>
+
+
+    <!-- Sección simplex res -->
+    <!-- <div id="jmodelo">
+    </div> -->
+
+    <!--Footer-->
+    <footer class="page-footer font-small stylish-color-dark pt-4 mt-4 bg-dark text-white">
+
+        <!--Footer Links-->
+        <div class="container text-center text-md-left">
+            <div class="row">
+
+                <!--First column-->
+                <div class="col-md-3">
+                    <h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Acerca de los desarrolladores</h5>
+                    <p>
+                        <i>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat, suscipit ad? Aperiam,
+                            eum. Possimus ad vero doloribus iste odit voluptas ducimus temporibus, nam saepe
+                            adipisci
+                            doloremque recusandae, delectus maxime voluptates?</i>
+                    </p>
+                </div>
+                <!--/.First column-->
+
+                <hr class="clearfix w-100 d-md-none">
+
+                <!--Second column-->
+                <div class="col-md-3 mx-auto">
+                    <h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Hernández Tapia Luis Enrique</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <p>N° Bol: 2016602646</p>
+                            <p>Tel: 756103711</p>
+                            <p>Semestre: 5°</p>
+                        </li>
+                    </ul>
+                </div>
+                <!--/.Second column-->
+
+
+                <hr class="clearfix w-100 d-md-none">
+
+                <!--Second column-->
+                <div class="col-md-4 mx-auto">
+                    <h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Loretto Estrada Galilea América</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <p>N° Bol: 2017630102</p>
+                            <p>Tel: 5513365219</p>
+                            <p>Semestre: 5°</p>
+                        </li>
+                    </ul>
+                </div>
+                <!--/.Second column-->
+
+                <hr class="clearfix w-100 d-md-none">
+            </div>
+        </div>
+        <!--/.Footer Links-->
+
+        <hr>
+        <!--Copyright-->
+        <div class="footer-copyright py-3 text-center">
+            © 2018 Copyright:
+            <a href="index.html">ESCOM</a>
+        </div>
+        <!--/.Copyright-->
+
+    </footer>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="jQuery/jquery-3.3.1.slim.min.js"></script>
+    <script src="jQuery/popper.min.js"></script>
+    <script src="bootstrap413/js/bootstrap.min.js"></script>
+</body>
+
+</html>

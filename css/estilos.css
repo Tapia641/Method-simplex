@@ -1,0 +1,24 @@
+body.bdy{
+  font-family: 'Crimson Text', serif; background: url('../imgs/bg.png');
+  background-size: cover;
+  background-attachment: fixed;
+}
+.nv_nr{width: 50px;}
+
+
+.fondo{
+    background: url('../imgs/index.jpg');
+    height: 100vh; /*tomara todo el alto de su contenedor*/
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-minav{background:#005792 ;}
+
+.bg-tras{background: rgba(white,white,white,0.8)}
+
+body.bg2{
+  background: url('imgs/bg.png');
+  background-size: cover;
+  background-attachment: fixed;
+}
