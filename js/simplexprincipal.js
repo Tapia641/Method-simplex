@@ -36,9 +36,9 @@ function preparar() {
 
     s = s + "<tr>";
     if (objetivo == 1) {
-        s = s + "<td class='jcell'>Max Z = </td>";
+        s = s + "<td class='jcell'>Máximizar Z = </td>";
     } else {
-        s = s + "<td class='jcell'>Min Z = </td>";
+        s = s + "<td class='jcell'>Mínimizar Z = </td>";
     }
     for (j = 1; j <= novariables; j++) {
         s = s + "<td><input type='text name='txtx'" + j +

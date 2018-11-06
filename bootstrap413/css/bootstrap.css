@@ -4954,7 +4954,7 @@ input[type="button"].btn-block {
 
 .alert-success {
   color: #155724;
-  background-color: #d4edda;
+  background-color: #d1f4fa;
   border-color: #c3e6cb;
 }
 
@@ -6093,7 +6093,7 @@ button.bg-secondary:focus {
 }
 
 .bg-success {
-  background-color: #28a745 !important;
+  background-color: #edf9fc !important;
 }
 
 a.bg-success:hover, a.bg-success:focus,
