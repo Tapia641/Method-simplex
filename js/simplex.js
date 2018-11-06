@@ -360,10 +360,10 @@
                 s= s + "<td></td>";
                 if (this.maximizar)
                 {
-                    s= s + "<td>Máx Z =</td>";
+                    s= s + "<td>C<sub>j</sub></td>";
                 }else
                 {
-                    s= s + "<td>Mín Z =</td>";
+                    s= s + "<td>C<sub>j</sub></td>";
                 }
                 for (j=1; j<=this.ntotal; j++)
                 {
@@ -373,14 +373,14 @@
                 s= s + "<td></td>";
                 s= s + "</tr>";
                 s= s + "<tr>";
-                s= s + "<td>Coef</td>";
+                s= s + "<td>Coeficiente</td>";
                 s= s + "<td>Base</td>";
                 for (j=1; j<=this.ntotal; j++)
                 {
                     s= s + "<td>"+this.c[0][j]+"</td>";
                 }
-                s= s + "<td>R.H.S</td>";
-                s= s + "<td>Theta</td>";
+                s= s + "<td>Vector solución</td>";
+                s= s + "<td>Menor coef. positivo</td>";
                 s= s + "</tr>";
                 for (i=1; i<=this.norestricciones; i++)
                 {
@@ -403,7 +403,7 @@
              s= s + "<tr>";
              s= s+ "<td></td>";
              
-             s= s+ "<td>Z</td>";
+             s= s+ "<td>Z<sub>j</sub></td>";
              for (j=1;j<=this.ntotal+1;j++)
              {
                  s= s+ "<td>"+m(this.zeta[2][j],this.zeta[1][j])   +"</td>";
