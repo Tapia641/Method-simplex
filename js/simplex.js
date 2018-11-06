@@ -250,60 +250,60 @@
             
             //documentar...
             var smodelo="";
-            if (this.documentar)
-            {
-                smodelo = "<br><table>";
-                smodelo = smodelo +"<tr>";
-                //documentar la función objetivo....
-                smodelo = smodelo +"<td><b>"+(this.maximizar?"Max Z = ":"Min Z = ")+"</b></td>";
-                for (i=1; i<=this.noxs+this.noss; i++)
-                {
-                    if (i==1)
-                    {
-                        smodelo = smodelo +"<td>"+     this.c[1][i] + this.c[0][i]+"</td>";
-                    }else
-                    {
-                        smodelo = smodelo +"<td>"+(this.c[1][i]>=0?"+":"" )+ this.c[1][i] + this.c[0][i]+"</td>";
-                    }    
+            // if (this.documentar)
+            // {
+            //     smodelo = "<br><table>";
+            //     smodelo = smodelo +"<tr>";
+            //     //documentar la función objetivo....
+            //     smodelo = smodelo +"<td><b>"+(this.maximizar?"Max Z = ":"Min Z = ")+"</b></td>";
+            //     for (i=1; i<=this.noxs+this.noss; i++)
+            //     {
+            //         if (i==1)
+            //         {
+            //             smodelo = smodelo +"<td>"+     this.c[1][i] + this.c[0][i]+"</td>";
+            //         }else
+            //         {
+            //             smodelo = smodelo +"<td>"+(this.c[1][i]>=0?"+":"" )+ this.c[1][i] + this.c[0][i]+"</td>";
+            //         }    
                     
-                }
-                for (i=(this.noxs+this.noss+1); i<=this.ntotal; i++)
-                {                    
-                    smodelo = smodelo +"<td>"+(this.c[2][i]>=0?"+":"" ) +this.c[2][i]+"M"+this.c[0][i]+"</td>";
-                }
-                smodelo = smodelo +"</tr>";
-                smodelo = smodelo +"<tr><td>Sujeto a:</td></tr>";
-                for (i=1; i<= this.norestricciones; i++)
-                {
-                    smodelo = smodelo +"<tr>";
-                    smodelo = smodelo +"<td></td>";
-                    for (j=1; j<=this.ntotal; j++)
-                    {
-                        if (this.a[i][j]!= 0)
-                        {
-                            if (j>1)
-                            {
-                                smodelo = smodelo +"<td>"+(this.a[i][j]>0?"+":"")+  this.a[i][j]+this.c[0][j]+"</td>";    
-                            }else
-                            {
-                                smodelo = smodelo +"<td>"+ this.a[i][j]+this.c[0][j]+"</td>";
-                            }    
+            //     }
+            //     for (i=(this.noxs+this.noss+1); i<=this.ntotal; i++)
+            //     {                    
+            //         smodelo = smodelo +"<td>"+(this.c[2][i]>=0?"+":"" ) +this.c[2][i]+"M"+this.c[0][i]+"</td>";
+            //     }
+            //     smodelo = smodelo +"</tr>";
+            //     smodelo = smodelo +"<tr><td>Sujeto a:</td></tr>";
+            //     for (i=1; i<= this.norestricciones; i++)
+            //     {
+            //         smodelo = smodelo +"<tr>";
+            //         smodelo = smodelo +"<td></td>";
+            //         for (j=1; j<=this.ntotal; j++)
+            //         {
+            //             if (this.a[i][j]!= 0)
+            //             {
+            //                 if (j>1)
+            //                 {
+            //                     smodelo = smodelo +"<td>"+(this.a[i][j]>0?"+":"")+  this.a[i][j]+this.c[0][j]+"</td>";    
+            //                 }else
+            //                 {
+            //                     smodelo = smodelo +"<td>"+ this.a[i][j]+this.c[0][j]+"</td>";
+            //                 }    
                             
-                        }else
-                        {
-                            smodelo = smodelo +"<td></td>";
-                        }    
+            //             }else
+            //             {
+            //                 smodelo = smodelo +"<td></td>";
+            //             }    
                         
-                    }
-                    smodelo = smodelo +"<td> = </td>";
-                    smodelo = smodelo +"<td>"+ this.a[i][this.ntotal+1]   +"</td>";
-                    smodelo = smodelo +"</tr>";
-                }
-                smodelo = smodelo +"<tr><td>Xi>=0</td></tr>";
-                smodelo = smodelo +"</table><br>";
-                smodelo = smodelo +"Xi = Variables de decisi&oacute;n<br> Si = Variables de holgura o super&aacute;vit <br>Ai = Variables artificiales ";
-                document.getElementById(div).innerHTML = document.getElementById(div).innerHTML  + smodelo;
-            }
+            //         }
+            //         smodelo = smodelo +"<td> = </td>";
+            //         smodelo = smodelo +"<td>"+ this.a[i][this.ntotal+1]   +"</td>";
+            //         smodelo = smodelo +"</tr>";
+            //     }
+            //     smodelo = smodelo +"<tr><td>Xi>=0</td></tr>";
+            //     smodelo = smodelo +"</table><br>";
+            //     smodelo = smodelo +"Xi = Variables de decisi&oacute;n<br> Si = Variables de holgura o super&aacute;vit <br>Ai = Variables artificiales ";
+            //     document.getElementById(div).innerHTML = document.getElementById(div).innerHTML  + smodelo;
+            // }
         }catch(err)
         {
             alert("Error :"+err.message);
@@ -360,10 +360,10 @@
                 s= s + "<td></td>";
                 if (this.maximizar)
                 {
-                    s= s + "<td>Max Z =</td>";
+                    s= s + "<td>Máx Z =</td>";
                 }else
                 {
-                    s= s + "<td>Min Z =</td>";
+                    s= s + "<td>Mín Z =</td>";
                 }
                 for (j=1; j<=this.ntotal; j++)
                 {
@@ -508,10 +508,10 @@
                     }                    
                 }    
                      
-                 if (this.documentar)
-                 {
-                     document.getElementById(div).innerHTML+="<br><br>Variable que entra: "+this.c[0][mejor] ;
-                 }
+                //  if (this.documentar)
+                //  {
+                //      document.getElementById(div).innerHTML+="<br><br>Variable que entra: "+this.c[0][mejor] ;
+                //  }
                  return mejor;
              }else
              {
@@ -527,10 +527,10 @@
                         }
                     }
                  }
-                  if (this.documentar)
-                 {
-                     document.getElementById(div).innerHTML+="<br><br>Variable que entra: "+this.c[0][mejor] ;
-                 }
+                //   if (this.documentar)
+                //  {
+                //      document.getElementById(div).innerHTML+="<br><br>Variable que entra: "+this.c[0][mejor] ;
+                //  }
                  return mejor; //Si no encontró nada, retornará cero... y en ese caso se ha terminado...
              }    
          }else
@@ -563,10 +563,10 @@
                      }
                  }                 
                      
-                 if (this.documentar)
-                 {
-                     document.getElementById(div).innerHTML+="<br><br>Variable que entra: "+this.c[0][mejor] ;
-                 }
+                //  if (this.documentar)
+                //  {
+                //      document.getElementById(div).innerHTML+="<br><br>Variable que entra: "+this.c[0][mejor] ;
+                //  }
                  return mejor;
              }else
              {
@@ -582,16 +582,16 @@
                         }
                     }
                  }
-                 if (this.documentar)
-                 {
-                     if (mejor!=0)
-                     {
-                         document.getElementById(div).innerHTML+="<br><br>Variable que entra: "+this.c[0][mejor] ;
-                     }else
-                     {
-                         document.getElementById(div).innerHTML+="<br><br>Se encontró la solución: ";
-                     }
-                 }               
+                //  if (this.documentar)
+                //  {
+                //      if (mejor!=0)
+                //      {
+                //          document.getElementById(div).innerHTML+="<br><br>Variable que entra: "+this.c[0][mejor] ;
+                //      }else
+                //      {
+                //          document.getElementById(div).innerHTML+="<br><br>Se encontró la solución: ";
+                //      }
+                //  }               
                  
                  return mejor; //Si no encontró nada, retornará cero... y en ese caso se ha terminado...
              }    
@@ -652,18 +652,18 @@
                     }
                 }
             }
-            if (this.documentar)
-                    {
-                        if (varsaliente!=0)
-                        {
-                            document.getElementById(div).innerHTML+="<br>Variable que sale: "+this.c[0][this.base[varsaliente]] ;
-                        }else
-                        {
-                            document.getElementById(div).innerHTML+="<br>Ooops! No sale nadie. No hay solución";
-                            this.tiposolucion = 3;
-                            return 0;
-                        }
-                    }
+            // if (this.documentar)
+            //         {
+            //             if (varsaliente!=0)
+            //             {
+            //                 document.getElementById(div).innerHTML+="<br>Variable que sale: "+this.c[0][this.base[varsaliente]] ;
+            //             }else
+            //             {
+            //                 document.getElementById(div).innerHTML+="<br>Ooops! No sale nadie. No hay solución";
+            //                 this.tiposolucion = 3;
+            //                 return 0;
+            //             }
+            //         }
            return varsaliente;
          }catch(err)
            {
@@ -776,10 +776,10 @@
        s= s + "</div>";
        
            
-       if (this.documentar)
-       {
-           document.getElementById(div).innerHTML += s;
-       }
+    //    if (this.documentar)
+    //    {
+    //        document.getElementById(div).innerHTML += s;
+    //    }
        this.base[ifila]= icolumna;
        return 0;
            }catch(err)
@@ -916,7 +916,7 @@
                     break;
                 }    
 
-                this.documentarmatrix();
+                // this.documentarmatrix();
                 this.gauss(j,i);
                 ntablas++;
                 if (ntablas==100)
@@ -936,11 +936,11 @@
             s =  s +"<b>Z</b> = "+m( this.zeta[2][this.ntotal+1], this.zeta[1][this.ntotal+1]   );
             if (this.tiposolucion==3)
             {
-                s = s + "<br>Sin solución!";
+                // s = s + "<br>Sin solución!";
             }
             if (this.tiposolucion==4)
             {
-                s = s + "<br>Infinitas Soluciones!";
+                // s = s + "<br>Infinitas Soluciones!";
             }
 
             document.getElementById(div).innerHTML+= s;

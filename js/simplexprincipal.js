@@ -237,7 +237,7 @@ function resolver() {
     }
 
     // p.documentar = document.getElementById("chkiteraciones").checked;
-    p.documentar = false;
+    p.documentar = true;
     p.novariables = n;
     p.norestricciones = m;
     p.problema = a_problema;
