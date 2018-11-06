@@ -24,7 +24,7 @@ function preparar() {
         objetivo = 0;
     }
         // s = s + "Introduzca los coeficientes del problema:<br>";
-    s = s + "<table bordercolor='#FFFFFF'>";
+    s = s + "<table class='table table-hover' bordercolor='#FFFFFF'>";
     s = s + "<tr>";
     s = s + "<td></td>";
     for (i = 1; i <= novariables; i++) {

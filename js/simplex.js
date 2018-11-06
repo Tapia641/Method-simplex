@@ -355,7 +355,7 @@
              var temp=0;
              
              s= s + "<br><br>";
-             s= s + "<div class='Table1'><table >";
+             s= s + "<div class='Table1'><table class='table table-hover'>";
                 s= s + "<tr>";
                 s= s + "<td></td>";
                 if (this.maximizar)
