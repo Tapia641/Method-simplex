@@ -1,5 +1,5 @@
 body.bdy{
-  font-family: 'Crimson Text', serif; background: url('../imgs/bg.png');
+  font-family: 'Crimson Text', serif; background: url('../imgs/bg.jpg');
   background-size: cover;
   background-attachment: fixed;
 }
@@ -13,12 +13,19 @@ body.bdy{
     background-size: cover;
 }
 
+.fondo2{
+  background: url('../imgs/bg.jpg');
+  height: 100vh; /*tomara todo el alto de su contenedor*/
+  background-position: center;
+  background-size: cover;
+}
+
 .bg-minav{background:#005792 ;}
 
 .bg-tras{background: rgba(white,white,white,0.8)}
 
 body.bg2{
-  background: url('imgs/bg.png');
+  background: url('imgs/fondo2.png');
   background-size: cover;
   background-attachment: fixed;
 }

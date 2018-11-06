@@ -13,16 +13,28 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns"
         crossorigin="anonymous">
 
-    <title>Examen</title>
+    <title>Proyecto</title>
+
+    <style>
+        table input {
+                width: 100%;
+            }
+    
+            .bg-VB {
+                background: url('imgs/bg.jpg');
+                background-size: cover;
+                background-attachment: fixed;
+            }
+    </style>
 
     <script type="text/javascript" src="js/simplex.js"></script>
     <script type="text/javascript" src="js/simplexprincipal.js"></script>
 </head>
 
-<body>
+<body class="bg-VB">
 
     <!-- Encabezado -->
-    <div class="container-fluid  navbar-dark bg-minav fixed-top text-uppercase">
+    <div class="container-fluid navbar-dark bg-minav fixed-top text-uppercase">
         <nav class="navbar navbar-expand-lg container-fluid bg-minav">
             <a class="navbar-brand" href="#">
                 <img src="imgs/navbar.png" alt=""> Métodos-cuantitativos</a>
@@ -104,7 +116,7 @@
                                         value="Generar Tabla" onclick="preparar()" />
 
                                     <button type="button" class="btn btn-primary btn-md btn-block" id="calculate"
-                                        onclick="resolver()" >Resolver</button>
+                                        onclick="resolver()">Resolver</button>
 
                                     <div id="fo"></div>
                                     <div id="matriz"></div>
@@ -172,7 +184,8 @@
                                             <h4 class="alert-heading">
                                                 <b>Solución</b>
                                             </h4>
-                                            <p>La solución óptima, contiene los resultados arrojados por la tabla simplex,
+                                            <p>La solución óptima, contiene los resultados arrojados por la tabla
+                                                simplex,
                                             </p>
                                             <hr>
                                         </div>
@@ -206,7 +219,8 @@
                 <div class="col-md-3">
                     <h5 class="text-uppercase mb-4 mt-3 font-weight-bold">Acerca del proyecto</h5>
                     <p>
-                        <i>Este proyecto se realizó como parte del segundo departamental de la materia de Métodos cuantitativos para la toma de decisiones.</i>
+                        <i>Este proyecto se realizó como parte del segundo departamental de la materia de Métodos
+                            cuantitativos para la toma de decisiones.</i>
                     </p>
                 </div>
                 <!--/.First column-->
